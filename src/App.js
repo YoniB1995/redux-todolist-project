@@ -1,5 +1,4 @@
 import React from 'react';
-import { Counter } from './features/counter/Counter';
 import './App.css';
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
     <div className="App">
       
        
-        <Counter />
+      
         
     </div>
   );
