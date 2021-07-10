@@ -2,6 +2,8 @@ import React from 'react'
 import Input from '../Features/Input'
 import styled from 'styled-components'
 import TodoItem from '../Features/TodoItem'
+import { useSelector } from 'react-redux'
+import { selectToDoList } from '../Features/todoSlice'
 
 const HomeStyle = styled.div` 
 display:flex;
@@ -15,6 +17,7 @@ width:100vw;
 const Container= styled.div`
 padding:32px 0px;
 border: 1px solid black;
+border-radius:25px;
 height:300px;
 width:300px;
 display:flex;
@@ -32,15 +35,7 @@ align-items: center;
 `
 
 export default function Homepage() {
-    const todoList = [{
-            item:'todo',
-            done:false,
-            id:546546456},
-            {
-            item:'todo2',
-            done:true,
-            id:454545644}
-        ]
+    const todoList = useSelector(selectToDoList)
     return (
         <HomeStyle>
             <Container>

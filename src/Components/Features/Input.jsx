@@ -16,6 +16,8 @@ height:50%;
 `
 
 const InputStyle = styled.input` 
+height:20px;
+border-radius:12px;
 border: none;
 :focus{
     outline: none;
@@ -44,10 +46,10 @@ export default function Input() {
     return (
         <FormStyle>
             
-            <label htmlFor="">Add Note:
+            <label htmlFor="">
                 <InputStyle type="text" name="" value={text} onChange={(e)=>{setText(e.target.value)}}/>
             </label>
-            <ButtonStyle onClick={addToDo}>Click</ButtonStyle>
+            <ButtonStyle onClick={addToDo}>Add Memo</ButtonStyle>
             
         </FormStyle>
     )
