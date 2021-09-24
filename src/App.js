@@ -19,18 +19,19 @@ width:100vw;
 `
 
 function App() {
-  const {students} = useSelector(state => state.student)
-  const dispatch = useDispatch();
-  const [student,setStudent] = useState("");
+  // const {students} = useSelector(state => state.student)
+  // const dispatch = useDispatch();
+  // const [student,setStudent] = useState("");
 
   return (
     <AppBody>
-      {students.map((student)=><h1>{student}</h1>)}
+      {/* {students.map((student)=><h1>{student}</h1>)}
       <input type="text" value={student} onChange={(e)=> setStudent(e.target.value)} />
       <button onClick={()=> dispatch(addNewStudent(student))}>Add Student</button>
       <button onClick={()=> dispatch(resetStudents())}>Reset All Students</button>
-      <button onClick={()=> console.log(students)}>Get Students</button>
+      <button onClick={()=> console.log(students)}>Get Students</button> */}
       {/* <Homepage/> */}
+      <p>learn react</p>
     </AppBody>
   );
 }
