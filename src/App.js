@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import {addNewStudent, resetStudents} from './redux/students'
+import Counter from './Components/Features/Counter/Counter'
 
 const AppBody = styled.div` 
 margin:0;
@@ -31,7 +32,7 @@ function App() {
       <button onClick={()=> dispatch(resetStudents())}>Reset All Students</button>
       <button onClick={()=> console.log(students)}>Get Students</button> */}
       {/* <Homepage/> */}
-      <p>learn react</p>
+      <p>Learn vue</p>
     </AppBody>
   );
 }
