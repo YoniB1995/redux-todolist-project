@@ -16,6 +16,14 @@ const Counter = () => {
       <button onClick={incrementNum} data-testid="add-btn">
         +
       </button>
+      <input
+        type="number"
+        data-testid="input"
+        value={num}
+        onChange={(e) => {
+          setNum(e.target.value);
+        }}
+      />
       <button onClick={decrementNum} data-testid="add-subtract">
         -
       </button>
