@@ -3,15 +3,24 @@ import Counter from '../Counter';
 import { render ,fireEvent} from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 
+let getByTestId;
+
+beforeEach(()=> {
+    const component = render(<Counter/>);
+    getByTestId = component.getByTestId;
+})
+
+// afterEach(()=>{
+//     cleanup() // by default
+// })
+
 test("header renders with correct text", () => {
-    const {getByTestId} = render(<Counter/>);
     const headerEl = getByTestId("header");
 
     expect(headerEl.textContent).toBe("My Counter")
 
 })
 test("counter initially starts with text of 0",()=> {
-    const {getByTestId} = render(<Counter/>);
     const counterEl = getByTestId("counter");
 
     expect(counterEl.textContent).toBe("0")
@@ -25,21 +34,18 @@ test("counter initially starts with text of 0",()=> {
 // })
 
 test("increment button renders with +",()=>{
-    const {getByTestId} = render(<Counter/>);
     const addBtn = getByTestId("add-btn");
 
     expect(addBtn.textContent).toBe("+");
 })
 
 test("subtract button renders with +",()=>{
-    const {getByTestId} = render(<Counter/>);
     const subtractBtn = getByTestId("add-subtract");
 
     expect(subtractBtn.textContent).toBe("-");
 })
 
 test("changing value of input works correctly" , () =>{
-    const {getByTestId} = render(<Counter/>);
     const inputEl = getByTestId("input");
 
         expect(inputEl.value).toBe("0")
@@ -56,12 +62,12 @@ test("changing value of input works correctly" , () =>{
 
 
 test("click on plus btn adds 1 to counter", ()=> {
-    const {getByTestId} = render(<Counter/>);
     const btnEl = getByTestId('add-btn');
     const counterEl = getByTestId('counter');
     expect(counterEl.textContent).toBe("0");
 
     fireEvent.click(btnEl);
+    
 
     expect(counterEl.textContent).toBe("1");
 })
